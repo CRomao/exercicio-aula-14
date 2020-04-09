@@ -1,4 +1,4 @@
-package br.edu.fapce.botao;
+package br.edu.fapce.view;
 
 import java.io.IOException;
 
@@ -17,7 +17,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("botao"));
+        scene = new Scene(loadFXML("view"));
         stage.setScene(scene);
         stage.show();
     }
