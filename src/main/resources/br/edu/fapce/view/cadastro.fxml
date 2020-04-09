@@ -22,8 +22,8 @@
       <TextField fx:id="tfDataNascimento" layoutX="126.0" layoutY="138.0" />
       <TextField fx:id="tfNomeMae" layoutX="420.0" layoutY="138.0" />
       <Button fx:id="btnCadastrar" layoutX="34.0" layoutY="200.0" mnemonicParsing="false" onAction="#actionBtnCadastrar" prefHeight="40.0" prefWidth="85.0" text="Cadastrar" />
-      <Button fx:id="btnSerializar" layoutX="135.0" layoutY="200.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="85.0" text="Serializar" />
-      <Button fx:id="btnDesserializar" layoutX="235.0" layoutY="200.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="85.0" text="Desserializar" />
+      <Button fx:id="btnSerializar" layoutX="135.0" layoutY="200.0" mnemonicParsing="false" onAction="#actionBtnSerializar" prefHeight="40.0" prefWidth="85.0" text="Serializar" />
+      <Button fx:id="btnDesserializar" layoutX="235.0" layoutY="200.0" mnemonicParsing="false" onAction="#actionBtnDesserializar" prefHeight="40.0" prefWidth="85.0" text="Desserializar" />
       <Button fx:id="btnSair" layoutX="484.0" layoutY="200.0" mnemonicParsing="false" onAction="#actionBtnSair" prefHeight="40.0" prefWidth="85.0" text="Sair" />
    </children>
 </AnchorPane>
