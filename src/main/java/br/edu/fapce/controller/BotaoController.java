@@ -11,6 +11,7 @@ import javafx.stage.Stage;
 
 public class BotaoController {
 
+	// Classe para abrir a tela de Cadastro de Usuário após clicar no botão.
 	@FXML
 	public Button buttonEnviar;
 

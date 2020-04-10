@@ -2,20 +2,23 @@ package br.edu.fapce.model;
 
 import java.io.Serializable;
 
-public class Usuario implements Serializable{
+//Classe para o cadastro dos usuários.
+public class Usuario implements Serializable {
 
 	private String nome;
 	private String cpf;
 	private String dataNascimento;
 	private String nomeMae;
 
+	// Construtor da classe.
 	public Usuario(String nome, String cpf, String dataNascimento, String nomeMae) {
 		setNome(nome);
 		setCpf(cpf);
 		setDataNascimento(dataNascimento);
 		setNomeMae(nomeMae);
 	}
-	
+
+	// Função para imprimir os dados do usuário.
 	public void imprimirDados() {
 		System.out.print("Nome: " + getNome());
 		System.out.print(" | CPF: " + getCpf());
@@ -56,4 +59,3 @@ public class Usuario implements Serializable{
 	}
 
 }
-
