@@ -16,12 +16,6 @@ public class BotaoController {
 
 	@FXML
 	public void actionEnviar() {
-		
-		Alert alert = new Alert(AlertType.INFORMATION);
-		alert.setHeaderText(null);
-		alert.setTitle("Informação");
-		alert.setContentText("Pressione OK para realizar um cadastro!");
-		alert.showAndWait();
 		try {
 			new Cadastro().start(new Stage());
 		} catch (IOException e) {

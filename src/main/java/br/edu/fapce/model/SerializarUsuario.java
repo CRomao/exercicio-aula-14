@@ -8,10 +8,10 @@ import javafx.scene.control.Alert.AlertType;
 
 public class SerializarUsuario {
 	
-	Usuario usuario;
+	ListaUsuarios lista;
 	
-	public SerializarUsuario(Usuario usu) {
-		this.usuario = usu;
+	public SerializarUsuario(ListaUsuarios usu) {
+		this.lista = usu;
 	}
 	
 	
@@ -19,14 +19,14 @@ public class SerializarUsuario {
 		try{
 			FileOutputStream arquivo = new FileOutputStream("arquivo.ser");
 			ObjectOutputStream saida = new ObjectOutputStream(arquivo);
-			saida.writeObject(usuario);
+			saida.writeObject(lista);
 			saida.close();
 			arquivo.close();
 			
 			Alert alert = new Alert(AlertType.INFORMATION);
 			alert.setHeaderText(null);
 			alert.setTitle("Informação");
-			alert.setContentText("Objeto serializado!");
+			alert.setContentText("Lista de Usuários serializada!");
 			alert.showAndWait();
 		}catch(Exception e) {
 			Alert alert = new Alert(AlertType.INFORMATION);

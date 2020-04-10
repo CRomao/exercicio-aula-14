@@ -1,18 +1,17 @@
 package br.edu.fapce.controller;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-
 import br.edu.fapce.model.DesserializarUsuario;
+import br.edu.fapce.model.ListaUsuarios;
 import br.edu.fapce.model.SerializarUsuario;
 import br.edu.fapce.model.Usuario;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 public class CadastroController {
 	
-	Usuario usuario;
+	ListaUsuarios lista = new ListaUsuarios();
 	
 	@FXML
 	public TextField tfNome;
@@ -22,6 +21,12 @@ public class CadastroController {
 	public TextField tfCPF;
 	@FXML
 	public TextField tfNomeMae;
+	
+	@FXML
+	public TextArea taUsuariosCadastrados;
+	
+	@FXML
+	public TextArea taDesserializados;
 	
 	@FXML
 	public Button btnCadastrar;
@@ -37,24 +42,24 @@ public class CadastroController {
 	
 	@FXML
 	public void actionBtnCadastrar() {
-		usuario = new Usuario(tfNome.getText(), tfCPF.getText(), 
-				tfDataNascimento.getText(), tfNomeMae.getText());
-		
+		Usuario usuario = new Usuario(tfNome.getText(), tfCPF.getText(), 
+										tfDataNascimento.getText(), tfNomeMae.getText());		
 		usuario.imprimirDados();
+		lista.adicionar(usuario);
+		preencherUsuariosCadastrados();
+		limparCampos();
 	}
 	
 	public void actionBtnSerializar() {
-		SerializarUsuario ser = new SerializarUsuario(usuario);
+		SerializarUsuario ser = new SerializarUsuario(lista);
 		ser.serializar();
-		limparCampos();
 	}
 	
 	public void actionBtnDesserializar() {
 		DesserializarUsuario desser = new DesserializarUsuario("arquivo.ser");
 		desser.desserializar();
-		this.usuario = desser.getUsuario();
-		preencherCampos(usuario.getNome(), usuario.getCpf(), usuario.getDataNascimento(), usuario.getNomeMae());
-		usuario.imprimirDados();
+		this.lista = desser.getLista();
+		preencherUsuariosDesserializados(lista);
 	}
 
 	public void actionBtnSair() {
@@ -68,13 +73,18 @@ public class CadastroController {
 		tfNomeMae.setText("");
 	}
 	
-	public void preencherCampos(String nome, String cpf, String dataNascimento, String nomeMae) {
-		tfNome.setText(nome);
-		tfCPF.setText(cpf);
-		tfDataNascimento.setText(dataNascimento);
-		tfNomeMae.setText(nomeMae);
+	public void preencherUsuariosCadastrados() {
+		taUsuariosCadastrados.setText("");
+		for(int i=0; i< lista.lista.size(); i++) {
+			taUsuariosCadastrados.appendText("Nome: " + lista.lista.get(i).getNome() + "\n");
+		}
 	}
 	
-	
+	public void preencherUsuariosDesserializados(ListaUsuarios listaUsu) {
+		taDesserializados.setText("");
+		for(int i=0; i< listaUsu.lista.size(); i++) {
+			taDesserializados.appendText("Nome: " + lista.lista.get(i).getNome() + "\n");
+		}
+	}
 
 }

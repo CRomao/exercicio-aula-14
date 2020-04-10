@@ -7,7 +7,7 @@ import java.io.ObjectInputStream;
 
 public class DesserializarUsuario {
 	
-	Usuario usuario = null;
+	ListaUsuarios lista = null;
 	FileInputStream arquivo = null;
 	
 	public DesserializarUsuario(String arq) {
@@ -21,7 +21,7 @@ public class DesserializarUsuario {
 	public void desserializar() {
 		try {
 			ObjectInputStream entrada = new ObjectInputStream(arquivo);
-			this.usuario = (Usuario) entrada.readObject();
+			this.lista = (ListaUsuarios) entrada.readObject();
 			entrada.close();
 			arquivo.close();
 			
@@ -32,8 +32,8 @@ public class DesserializarUsuario {
 		}
 	}
 
-	public Usuario getUsuario() {
-		return usuario;
+	public ListaUsuarios getLista() {
+		return lista;
 	}
 	
 }
