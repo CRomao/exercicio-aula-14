@@ -2,8 +2,8 @@ module br.edu.fapce.view {
     requires javafx.controls;
     requires javafx.fxml;
 
-    opens br.edu.fapce.view to javafx.fxml;
-    exports br.edu.fapce.view;
-    exports br.edu.fapce.controller;
-    exports br.edu.fapce.model;
+    opens br.com.pickshow.view to javafx.fxml;
+    exports br.com.pickshow.view;
+    exports br.com.pickshow.controller;
+    exports br.com.pickshow.model;
 }

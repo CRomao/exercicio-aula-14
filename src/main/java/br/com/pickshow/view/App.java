@@ -1,4 +1,4 @@
-package br.edu.fapce.view;
+package br.com.pickshow.view;
 
 import java.io.IOException;
 
@@ -17,7 +17,7 @@ public class App extends Application {
 
 	@Override
 	public void start(Stage stage) throws IOException {
-		scene = new Scene(loadFXML("view"));
+		scene = new Scene(loadFXML("login"));
 		stage.setScene(scene);
 		stage.show();
 	}
