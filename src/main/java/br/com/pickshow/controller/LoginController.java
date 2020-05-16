@@ -15,7 +15,6 @@ import javafx.stage.Stage;
 //Classe para o controle dos Cadastros.
 public class LoginController {
 
-
 	@FXML
 	public TextField txtEmail;
 	@FXML
@@ -26,22 +25,15 @@ public class LoginController {
 	public Label lblCadastrar;
 	@FXML
 	public ComboBox comboBoxEscolha;
-	
+
 	@FXML
 	public void actionComboBoxEscolha() {
-		comboBoxEscolha.getItems().removeAll(
-				"Profissional",
-				"Cliente");
-		comboBoxEscolha.getItems().addAll(
-				"Profissional",
-				"Cliente"
-				);
-		
+		String[] tipo = {"Profissional", "Cliente"};
+		comboBoxEscolha.getItems().removeAll(tipo);
+		comboBoxEscolha.getItems().addAll(tipo);
+
 	}
-	
-	
-	
-	
+
 	@FXML
 	public void actionBtnEntrar() {
 		Alert alert = new Alert(AlertType.INFORMATION);
@@ -50,8 +42,7 @@ public class LoginController {
 		alert.setContentText("Lista de Usuários serializada!");
 		alert.showAndWait();
 	}
-	
-	
+
 	@FXML
 	public void onMouseClickedLblCadastrar() {
 		try {
@@ -60,6 +51,5 @@ public class LoginController {
 			e.printStackTrace();
 		}
 	}
-
 
 }

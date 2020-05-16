@@ -9,7 +9,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 
 //Classe para o controle dos Cadastros.
-public class CadastroClienteController{
+public class CadastroClienteController {
 
 	@FXML
 	public Button btnCadastrarProfiss;
@@ -17,13 +17,13 @@ public class CadastroClienteController{
 	public Button btnCadastrarCliente;
 	@FXML
 	public Button btnCancelar;
-	
+
 	@FXML
 	public void actionBtnCancelar() {
 		Stage stage = (Stage) btnCancelar.getScene().getWindow();
-	    stage.close();
+		stage.close();
 	}
-	
+
 	@FXML
 	public void btnCadastrarProfiss() {
 		Alert alert = new Alert(AlertType.INFORMATION);
@@ -32,6 +32,5 @@ public class CadastroClienteController{
 		alert.setContentText("Lista de Usuários serializada!");
 		alert.showAndWait();
 	}
-
 
 }

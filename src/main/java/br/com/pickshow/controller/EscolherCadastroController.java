@@ -15,14 +15,14 @@ import javafx.stage.Stage;
 public class EscolherCadastroController {
 
 	CadastroFactory cadastroFactory = new CadastroFactory();
-	
+
 	@FXML
 	public Button btnCadastrarProfiss;
 	@FXML
 	public Button btnCadastrarCliente;
 	@FXML
 	public Button btnVoltar;
-		
+
 	@FXML
 	public void btnCadastrarProfiss() {
 		Alert alert = new Alert(AlertType.INFORMATION);
@@ -31,22 +31,21 @@ public class EscolherCadastroController {
 		alert.setContentText("Lista de Usuários serializada!");
 		alert.showAndWait();
 	}
-	
+
 	@FXML
 	public void actionBtnVoltar() {
 		Stage stage = (Stage) btnVoltar.getScene().getWindow();
-	    stage.close();
+		stage.close();
 	}
-	
+
 	@FXML
 	public void actionBtnCadastrarProfiss() throws IOException {
 		cadastroFactory.criarCadastro(CadastroFactory.PROFISSIONAL);
 	}
-	
+
 	@FXML
 	public void actionBtnCadastrarCliente() throws IOException {
 		cadastroFactory.criarCadastro(CadastroFactory.CLIENTE);
 	}
-
 
 }
